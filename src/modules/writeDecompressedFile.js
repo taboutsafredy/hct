@@ -14,8 +14,8 @@ async function writeDecompressedFile (decodedText, inputCompressedPath) {
     try {
         let  getOriginalCompressedFileName = path.basename(inputCompressedPath, path.extname(inputCompressedPath))
         getOriginalCompressedFileName = getOriginalCompressedFileName.slice(0, -11)
-        const outputPath = path.resolve(process.cwd(), `${getOriginalCompressedFileName}_decompressed.txt`)
-        await fs.writeFile (outputPath, decodedText)
+        const outputDecompressedPath = path.resolve(process.cwd(), `${getOriginalCompressedFileName}_decompressed.txt`)
+        await fs.writeFile (outputDecompressedPath, decodedText)
     } catch (error) {
         console.error(`🚨 Error in writeDecompressedFile :\n ${error}`)
     }
