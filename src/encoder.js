@@ -30,7 +30,7 @@ async function encodeTheText (getFilePath) {
 
         const encodedBuffer = Buffer.from(bytes)
         await fs.writeFile(path.resolve(__dirname, "../save/padding"), padding.toString())
-        await writeCompressedFile(encodedBuffer)
+        await writeCompressedFile(encodedBuffer, getFilePath)
 
     } catch (error) {
         console.error(`🚨 Error in ecodeTheText :\n ${error}`)
