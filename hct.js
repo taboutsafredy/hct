@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+
+
 const {program} = require("commander")
 const encoder = require("./src/encoder")
 const decoder = require("./src/decoder")
