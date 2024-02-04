@@ -7,13 +7,14 @@ const path = require("path");
  * @async 
  * @function writeCompressedFile
  * @param {buffer} encodedBuffer - encoded Buffer
+ * @param {string} getFilePath - Original filepath for get his name
  */
 
 async function writeCompressedFile(encodedBuffer, getFilePath) {
 
   try {
     const getOriginalFileName = path.basename(getFilePath, path.extname(getFilePath))
-    const outputCompressedPath = path.resolve(__dirname, `${getOriginalFileName}_compressed.huff`)
+    const outputCompressedPath = path.resolve(process.cwd(), `${getOriginalFileName}_compressed.huff`)
     await fs.writeFile(outputCompressedPath, encodedBuffer);
   } catch (error) {
     console.error(`🚨 Error in writeCompressedFile :\n ${error}`)
