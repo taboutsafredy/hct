@@ -26,7 +26,7 @@ async function decodeTheBinarySequence (inputCompressedPath) {
         await writeDecompressedFile(decodedText, inputCompressedPath)
 
     } catch (error) {
-        console.error(`🚨 Error in decodeTheBinarySequence :\n ${error}`)
+        console.error(`🚨 Error in decodeTheBinarySequence :\n${error}`)
     }
 }
 
