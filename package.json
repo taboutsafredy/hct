@@ -1,8 +1,8 @@
 {
   "name": "huffman-compression-tool",
   "version": "1.0.0",
+  "main": "",
   "description": "Huffman encoder/decoder 🛠",
-  "main": "hct.js",
   "directories": {
     "example": "examples",
     "test": "test"
@@ -28,7 +28,6 @@
     "jest": "^29.7.0"
   },
   "dependencies": {
-    "commander": "^11.1.0",
-    "commmander": "^0.0.1-security"
+    "commander": "^11.1.0"  
   }
 }
