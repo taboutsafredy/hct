@@ -15,9 +15,35 @@ async function generatePrefixCodeTable (getFilePath) {
     try {
         const root = await huffmanTree(getFilePath)
 
+        /**
+         * Generate random binary sequence with length for decoding
+         * @returns {string} arrayRandomSerieToString used for decoding 
+         */
+        function generateRandomSerie () {
+            try {
+                const arrayRandomSerie = []
+                for (let i = 0; i < 8; i++) {
+                    const bit = Math.round(Math.random())
+                    arrayRandomSerie.push(bit)
+                }
+
+                const arrayRandomSerieToString = arrayRandomSerie.join("")
+
+                return arrayRandomSerieToString
+            } catch (error) {
+                console.error(`🚨 Error in generateRandomSerie :\n ${error}`)
+            }
+        }
+        const randomBinaryString = generateRandomSerie()
+
+
+        /**
+         * Externalization of Huffman Tree
+         * @returns {boolean} true
+         */
         function saveRootOfHuffmanTree () {
             try {
-                fs.writeFileSync(path.resolve(__dirname, "../../save/root"), JSON.stringify(root))
+                fs.writeFileSync(path.resolve(__dirname, `../../save/${randomBinaryString}_root`), JSON.stringify(root))
                 return true
             } catch (error) {
                 console.error(`🚨 Error in saveRootOfHuffmanTree :\n ${error}`)
@@ -45,7 +71,7 @@ async function generatePrefixCodeTable (getFilePath) {
         }
 
         saveRootOfHuffmanTree()
-        return prefixCodeTable
+        return {prefixCodeTable, randomBinaryString}
         
     } catch (error) {
         console.error(`🚨 Error in generatePrefixCodeTable :\n ${error}`)

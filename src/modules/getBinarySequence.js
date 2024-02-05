@@ -14,17 +14,19 @@ async function getBinarySequence (inputCompressedPath) {
 
     try {
         const compressedFile = await fs.readFile(inputCompressedPath)
-        const paddingFilePath =  path.resolve(__dirname, "../../save/padding")
-        let padding = parseInt(await fs.readFile(paddingFilePath, "utf8"))
 
         let binarySequence = ""
         for (const byte of compressedFile) {
             binarySequence += ('00000000' + byte.toString(2)).slice(-8)
         }
 
-        binarySequence = binarySequence.slice(0, -padding)
+        const randomBinaryString = binarySequence.slice(0, 8)
+        const paddingFilePath =  path.resolve(__dirname, `../../save/${randomBinaryString}_padding`)
+        const padding = parseInt(await fs.readFile(paddingFilePath, "utf8"))
 
-        return binarySequence
+        binarySequence = binarySequence.slice(8, binarySequence.length - padding)
+
+        return {binarySequence, randomBinaryString}
 
     } catch (error) {
         console.error(`🚨 Error in getBinarySequence :\n ${error}`)
