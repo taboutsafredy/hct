@@ -39,8 +39,4 @@ async function encodeTheText (getFilePath) {
     }
 }
 
-
-const tst = "C:\\Users\\user\\Desktop\\go-CodingChallenges\\HuffmanCompressionTool\\examples\\lesMiserables.txt"
-encodeTheText(tst)
-
 module.exports = encodeTheText
