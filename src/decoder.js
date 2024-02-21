@@ -31,7 +31,4 @@ async function decodeTheBinarySequence (inputCompressedPath) {
     }
 }
 
-const tst  = "C:\\Users\\user\\Desktop\\go-CodingChallenges\\HuffmanCompressionTool\\src\\lesMiserables_compressed.huff"
-decodeTheBinarySequence(tst)
-
 module.exports = decodeTheBinarySequence
