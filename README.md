@@ -29,19 +29,19 @@ npm install -g https://github.com/th3fr3dy/hct.git
 
 ## Usage
 
-- Huff command<br><br>
+- **Huff** command<br>
 To compress file :
 ```bash
 hct huff <filePath>
 ```
-This will automatically create `filename.huff` file in your current working directory.
+This will automatically create `filename.huff` file in your current working directory.<br>
 
-- Unhuff command<br><br>
+- **Unhuff** command<br>
 To decompress .huff file:
 ```bash
 hct unhuff <filePath>
 ```
-This will automatically create `filename.unhuff.${orginal extension}` file in your current working directory.
+This will automatically create `filename.unhuff.${orginal extension}` file in your current working directory.<br>
 
 - Compare file sizes<br>
 
