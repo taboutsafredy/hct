@@ -1,7 +1,7 @@
 
 # Huffman Compression Tool (hct)
 
-**hct** is a command-line tool for test file encoding and decoding in NodeJS.<br>
+**hct** is a command-line tool for text file encoding and decoding in NodeJS.<br>
 Huffman coding is a popular algorithm for lossless data compression, create by David Albert Huffman in 1952.
 
 ![Hct Github Demo](./assets/hct-github-demo.gif)
