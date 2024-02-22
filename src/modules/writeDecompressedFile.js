@@ -8,13 +8,13 @@ const path = require("path")
  * @function writeDecompressedFile
  * @param {string} decodedText
  * @param {string} inputCompressedPath
+ * @param {string} ext
  */
-async function writeDecompressedFile (decodedText, inputCompressedPath) {
+async function writeDecompressedFile (decodedText, inputCompressedPath, ext) {
     
     try {
         let  getOriginalCompressedFileName = path.basename(inputCompressedPath, path.extname(inputCompressedPath))
-        getOriginalCompressedFileName = getOriginalCompressedFileName.slice(0, -11)
-        const outputDecompressedPath = path.resolve(process.cwd(), `${getOriginalCompressedFileName}_decompressed.txt`)
+        const outputDecompressedPath = path.resolve(process.cwd(), `${getOriginalCompressedFileName}.unhuff${ext}`)
         await fs.writeFile (outputDecompressedPath, decodedText)
     } catch (error) {
         console.error(`🚨 Error in writeDecompressedFile :\n ${error}`)

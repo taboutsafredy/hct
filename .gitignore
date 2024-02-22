@@ -1,4 +1,7 @@
 node_modules
-./compressed
-./decompressed
-./save/*
+
+# Don't push testing cache files
+cache/*
+
+# .......testing directory
+test/

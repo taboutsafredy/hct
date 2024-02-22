@@ -43,7 +43,7 @@ async function generatePrefixCodeTable (getFilePath) {
          */
         function saveRootOfHuffmanTree () {
             try {
-                fs.writeFileSync(path.resolve(__dirname, `../../save/${randomBinaryString}_root`), JSON.stringify(root))
+                fs.writeFileSync(path.resolve(__dirname, `../../.cache/${randomBinaryString}_root`), JSON.stringify(root))
                 return true
             } catch (error) {
                 console.error(`🚨 Error in saveRootOfHuffmanTree :\n ${error}`)

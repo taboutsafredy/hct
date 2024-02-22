@@ -14,7 +14,7 @@ async function writeCompressedFile(encodedBuffer, getFilePath) {
 
   try {
     const getOriginalFileName = path.basename(getFilePath, path.extname(getFilePath))
-    const outputCompressedPath = path.resolve(process.cwd(), `${getOriginalFileName}_compressed.huff`)
+    const outputCompressedPath = path.resolve(process.cwd(), `${getOriginalFileName}.huff`)
     await fs.writeFile(outputCompressedPath, encodedBuffer);
   } catch (error) {
     console.error(`🚨 Error in writeCompressedFile :\n ${error}`)

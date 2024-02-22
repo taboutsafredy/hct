@@ -21,7 +21,7 @@ async function getBinarySequence (inputCompressedPath) {
         }
 
         const randomBinaryString = binarySequence.slice(0, 8)
-        const paddingFilePath =  path.resolve(__dirname, `../../save/${randomBinaryString}_padding`)
+        const paddingFilePath =  path.resolve(__dirname, `../../.cache/${randomBinaryString}_padding`)
         const padding = parseInt(await fs.readFile(paddingFilePath, "utf8"))
 
         binarySequence = binarySequence.slice(8, binarySequence.length - padding)

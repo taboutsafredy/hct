@@ -9,8 +9,10 @@ async function decodeTheBinarySequence (inputCompressedPath) {
     try {
         
         const {binarySequence, randomBinaryString} = await getBinarySequence(inputCompressedPath)
-        const getRootString = await fs.readFile(path.resolve(__dirname, `../save/${randomBinaryString}_root`), "utf8")
+        const getRootString = await fs.readFile(path.resolve(__dirname, `../.cache/${randomBinaryString}_root`), "utf8")
         const getRootOfHuffmanTree = JSON.parse(getRootString)
+        const extFilePath =  path.resolve(__dirname, `../.cache/${randomBinaryString}_ext`)
+        const ext = await fs.readFile(extFilePath, "utf8")
 
         let decodedText = ""
         let currentNode = getRootOfHuffmanTree
@@ -24,7 +26,7 @@ async function decodeTheBinarySequence (inputCompressedPath) {
             }
         }
 
-        await writeDecompressedFile(decodedText, inputCompressedPath)
+        await writeDecompressedFile(decodedText, inputCompressedPath, ext)
 
     } catch (error) {
         console.error(`🚨 Error in decodeTheBinarySequence :\n${error}`)

@@ -31,7 +31,8 @@ async function encodeTheText (getFilePath) {
 
         const encodedBuffer = Buffer.from(bytes)
 
-        await fs.writeFile(path.resolve(__dirname, `../save/${randomBinaryString}_padding`), padding.toString())
+        await fs.writeFile(path.resolve(__dirname, `../.cache/${randomBinaryString}_padding`), padding.toString())
+        await fs.writeFile(path.resolve(__dirname, `../.cache/${randomBinaryString}_ext`), path.extname(getFilePath))
         await writeCompressedFile(encodedBuffer, getFilePath)
 
     } catch (error) {
