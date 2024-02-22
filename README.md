@@ -39,7 +39,7 @@ This will automatically create a `filename.unhuff.${orginal extension}` file in 
 ### Compare file sizes
 
 ```bash
-ls -lh <filePath> filename_compressed.huff
+ls -lh <filePath> filename.huff
 ```
 You will see like size of *filename.huff* is ~ **56.7%** of original file size.🗃️
 
