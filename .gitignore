@@ -1,9 +1,1 @@
 node_modules
-
-# Don't push testing cache files
-.cache/*
-!.cache/
-
-
-# .......testing directory
-./test
