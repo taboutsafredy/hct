@@ -8,36 +8,45 @@ Huffman coding is a popular algorithm for lossless data compression, create by D
 
 ## Features
 
-- Take screenshots of nodes in the canvas.
-- Easy-to-use plugin.
+- Efficient Compression and Decompression
+Employs the Huffman coding algorithm to efficiently compress and decompress text files, C, JS, PHP, and other text-based files, providing significant size reduction without data loss. Inspired by the algorithm created by David Albert Huffman in 1952.
+
+- Support for Multiple File Types
+Handles various file types, including text files, JavaScript, PHP, and more.
+
+- Simple Command Line Usage
+The streamlined command-line interface makes hct accessible to users of all levels, offering intuitive commands and key options for precise control over the compression and decompression processes.
+
+- Cross-Platform Support
+hct is compatible with multiple operating systems, offering complete flexibility for users. Whether you're working on Windows, Linux, or macOS.
 
 ## Installation
 
+To install the hct tool globally 💻
 ```bash
 npm install -g https://github.com/th3fr3dy/hct.git
 ```
-This will install the hct tool globally 💻
 
 ## Usage
 
-### Huff command 
-To compress a file :
-
+- Huff command
+- 
+To compress file :
 ```bash
 hct huff <filePath>
 ```
 This will automatically create `filename.huff` file in your current working directory.
 
-### Unhuff command
-To decompress a file:
-
+- Unhuff command
+To decompress .huff file:
 ```bash
 hct unhuff <filePath>
 ```
-This will automatically create a `filename.unhuff.${orginal extension}` file in your current working directory.
+This will automatically create `filename.unhuff.${orginal extension}` file in your current working directory.
 
 ### Compare file sizes
 
+Run :
 ```bash
 ls -lh <filePath> filename.huff
 ```
