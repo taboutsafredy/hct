@@ -1,10 +1,10 @@
 {
-  "name": "huffman-compression-tool",
+  "name": "hct",
   "version": "1.0.0",
   "main": "",
-  "description": "Huffman encoder/decoder 🛠",
+  "description": "hct encoder/decoder 🛠",
   "directories": {
-    "example": "examples",
+    "example": "assets",
     "test": "test"
   },
   "bin": {
